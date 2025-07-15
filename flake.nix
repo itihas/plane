@@ -8,6 +8,7 @@
       devShell = nixpkgs.legacyPackages.${system}.mkShell {
         packages = [ compose2nix.packages.${system}.default ];
       };
+    }) // {
       nixosModules.plane = ./docker-compose.nix; # generated with compose2nix.
-    });
+    };
 }
