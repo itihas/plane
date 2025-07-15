@@ -89,7 +89,6 @@ in {
       cd ${src}/apps/proxy
       docker build -t compose2nix/proxy -f Dockerfile.ce .
     '';
-    wantedBy = [ "docker-build-plane-images.target" ];
   };
   systemd.services."docker-build-space" = {
     path = [ pkgs.docker pkgs.git ];
